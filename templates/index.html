@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Judul Halaman -->
+	<title>SIKAN</title>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Icon -->
+	<link rel="shortcut icon" href="{{ url_for('static', filename='/images/favicon.ico') }}">
+	
+	<!-- CSS -->
+	<link rel="stylesheet" href={{ url_for('static', filename='/css/bootstrap.min.css') }} type="text/css">
+	<link rel="stylesheet" href={{ url_for('static', filename='/css/client_side.css') }}  type="text/css">
+	
+	<!-- JavaScript -->
+	<script src={{ url_for('static', filename='/js/jquery_3.6.0.min.js') }} ></script>
+	<script src={{ url_for('static', filename='/js/bootstrap_3.4.1.min.js') }} ></script>
+</head>
+
+<body id="halamanku" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+	<!-- Navigation Bar -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<!-- Daftar Halaman -->
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#informasi">INFORMASI</a></li>
+					<li><a href="#aplikasi">APLIKASI</a></li>
+					<li><a href="#anggotaKelompok">ANGGOTA KELOMPOK</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Bagian Halaman (Informasi) -->
+	<div id="informasi" class="container-fluid">
+		<div class="row">
+			<div class="col-sm-7">
+				<br><br>
+				<img src={{ url_for('static', filename='/images/1.png') }} alt="Orbit Logo" 
+				width="367" height="117" align="left">
+				<br><br><br><br><br>
+				<h4>APLIKASI DETEKSI KESEGARAN IKAN</h4>
+				<p style="text-align: justify; text-justify: inter-word;">
+					Berdasarkan SNI 01-2729.1-2006, ikan segar memiliki ciri-ciri sebagai berikut:<br>
+					- Murid di mata hitam menonjol dengan kornea bening.<br>
+					- Insangnya berwarna merah tua dan tidak mengeluarkan lendir.<br>
+					- Dagingnya elastis (kenyal) dan padat saat ditekan.<br>
+					- Lendir di permukaan kulit bening dan tidak berwarna.<br><br>
+					
+					Sedangkan ikan tidak segar memiliki ciri-ciri sebagai berikut:<br>
+					- Pupil mata terlihat sangat keruh.<br>
+					- Warna insangnya terlihat coklat.<br>
+					- Memiliki tekstur daging yang lembut.<br>
+					- Mulai berbau tidak sedap.
+				</p>
+				<br>
+				<p style="text-align: justify;text-justify: inter-word;">
+					Dengan citra mata ikan anda dapat mengetahui kesegaran ikan yang anda beli dari pasar. Teknologi ini menggunakan artificial intelligence bidang computer vision. Cara kerja nya dengan mengupload foto mata ikan yang anda miliki lalu akan diprediksi menggunakan model machine learning.
+				</p>
+				<br>
+
+				<!-- Tombol Mulai -->
+				<nav id="navgo" class="navbar" style="background-color:#ffffff;z-index: 0;">
+					<ul class="nav nav-pills">
+						<a class="btn btn-default btn-lg" href="#aplikasi" style="background-color:#0097B2; color: white;">Mulai</a>
+					</ul>
+				</nav>
+
+			</div>
+			<div class="col-sm-5">
+				<br><br><br><br><br><br><br>
+
+				<!-- Gambar Deskripsi Aplikasi -->
+				<div align="center">
+					<img src={{ url_for('static', filename='/images/app-display.JPG') }} height="500" ></img>
+				</div>
+			</div>
+		</div>
+		<br>
+	</div>
+	<br><br><br><br>
+
+	<!-- Bagian Halaman (Aplikasi) -->
+	<div id="aplikasi" data-bs-spy="scroll" data-bs-target="#navgo" data-bs-offset="0" class="scrollspy-example" tabindex="0">
+		<br><br>
+		<div class="row">
+			<div class="col-sm-7">
+				<br>><br><br><br>
+				<h3 style="margin-left: 50px;">UPLOAD GAMBAR </h3>
+					<form style="margin-left: 50px;">
+						<!-- Input atau Upload Gambar dari Pengguna -->
+						<p>SIKAN (Aplikasi Deteksi Kesegaran Ikan) dapat mengidentifikasikan kualitas ikan berdasarkan citra mata.</p>
+						<img src={{ url_for('static', filename='/images/ex-upload.JPG') }} width="650" ></img>
+						<br>
+						<p>Silahkan upload sebuah gambar</p>
+						<br>
+						<p>
+							<input type="file" id="input_gambar" name="file">
+						</p>
+						<br><br>
+						<!-- Tombol Prediksi -->
+						<button type="submit" id="prediksi_submit" class="btn btn-default btn-lg" style="background-color: #0097B2; color: white;">Prediksi</button>
+					</form>
+			</div>
+			<div class="col-sm-5">
+				<br><br><br><br><br><br><br>
+				<!-- Bagian Halaman untuk Hasil Prediksi -->
+				<div id="hasil_prediksi" align="center">
+					<!-- Hasil Prediksi akan ditampilkan di sini-->
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<br><br><br><br><br><br><br>
+<!-- Bagian Halaman (Anggota Kelompok) -->
+<div id="anggotaKelompok" class="container-fluid text-center">
+	<h2>ANGGOTA KELOMPOK</h2>
+	<h4>Potlot 2</h4><br><br>
+	<div class="row slideanim text-center">
+		<div class="col-sm-1"></div>
+		<div class="col-sm-2">
+			<img src="static/images/ikon_gambar1.jpg" width="200" height="200">
+			<h4>Henokh Alfanus Hutahuruk</h4>
+			<p>STMIK Pelita Nusantara</p>
+			<a href="#">
+				<img src="static/images/linkedin.png" alt="LinkedIn" class="social-media-icon" width="30" height="30">
+			</a>
+			<a href="https://www.instagram.com/henokhh_/">
+				<img src="static/images/instagram.png" alt="Instagram" class="social-media-icon" width="30" height="30">
+			</a>		
+			<a href="#">
+				<img src="static/images/github.png" alt="Github" class="social-media-icon" width="30" height="30">
+			</a>
+		</div>
+		<div class="col-sm-2">
+			<img src="static/images/ikon_gambar2.jpg" width="200" height="200">
+			<h4>Imam Ashabul Yamin</h4>
+			<p>Universitas Syiah Kuala</p>
+			<a href="https://www.linkedin.com/in/imam-ashabul-yamin-211a5a243/">
+				<img src="static/images/linkedin.png" alt="LinkedIn" class="social-media-icon" width="30" height="30">
+			</a>
+			<a href="https://instagram.com/iashabulyamin?igshid=MzRlODBiNWFlZA==">
+				<img src="static/images/instagram.png" alt="Instagram" class="social-media-icon" width="30" height="30">
+			</a>
+			<a href="https://github.com/imamashabul">
+				<img src="static/images/github.png" alt="Github" class="social-media-icon" width="30" height="30">
+			</a>
+		</div>
+		<div class="col-sm-2">
+			<img src="static/images/ikon_gambar3.jpeg" width="200" height="200">
+			<h4>Irfan zalputra</h4>
+			<p>Universitas Malikussaleh</p>	
+			<a href="#">
+				<img src="static/images/linkedin.png" alt="LinkedIn" class="social-media-icon" width="30" height="30">
+			</a>
+			<a href="#">
+				<img src="static/images/instagram.png" alt="Instagram" class="social-media-icon" width="30" height="30">
+			</a>		
+			<a href="#">
+				<img src="static/images/github.png" alt="Github" class="social-media-icon" width="30" height="30">
+			</a>
+		</div>
+		<div class="col-sm-2">
+			<img src="static/images/ikon_gambar4.png" width="200" height="200">
+			<h4>Rahmadia Anisa Putri</h4>
+			<p>Politeknik Medan</p>
+			<a href="#">
+				<img src="static/images/linkedin.png" alt="LinkedIn" class="social-media-icon" width="30" height="30">
+			</a>
+			<a href="#">
+				<img src="static/images/instagram.png" alt="Instagram" class="social-media-icon" width="30" height="30">
+			</a>
+			<a href="#">
+				<img src="static/images/github.png" alt="Github" class="social-media-icon" width="30" height="30">
+			</a>
+		</div>
+		<div class="col-sm-2">
+			<img src="static/images/ikon_gambar5.jpeg" width="200" height="200">
+			<h4>Robby Mahendra</h4>
+			<p>Universitas Bengkulu</p>
+			<a href="https://www.linkedin.com/in/robby-mahendra-8199501a0/">
+				<img src="static/images/linkedin.png" alt="LinkedIn" class="social-media-icon" width="30" height="30">
+			</a>
+			<a href="https://www.instagram.com/robby.mhdr/">
+				<img src="static/images/instagram.png" alt="Instagram" class="social-media-icon" width="30" height="30">
+			</a>
+			<a href="https://github.com/robbymhdr">
+				<img src="static/images/github.png" alt="Github" class="social-media-icon" width="30" height="30">
+			</a>
+		</div>
+		<div class="col-sm-1"></div>
+	</div>
+</div>
+
+	<!-- Footer -->
+	<footer class="container-fluid text-center">
+		<a href="#halamanku" title="To Top">
+			<span class="glyphicon glyphicon-chevron-up"></span>
+		</a>
+		<p>©2023 Kelompok Potlot 2. All rights reserved</p>
+	</footer>
+
+	<!-- JavaScript untuk Animasi Scroll dan Prediksi Model -->
+	<script  src={{ url_for('static', filename='/js/client_side.js') }}></script>
+
+</body>
+</html>
